@@ -1,0 +1,69 @@
+create database mysql_demo;
+use mysql_demo;
+show databases;
+create table student_table(
+   student_id INT,
+   student_name VARCHAR(100),
+   course_name VARCHAR(40)
+
+);
+show tables;
+describe student_table;
+alter table student_table add email varchar(100);
+describe student_table;
+truncate table student_table;
+show tables;
+describe student_table;
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(1,'ram','c1002','vamsi@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(2,'gopal','c1003','chittoor@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(3,'Vamsi','c1002','vara@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(4,'Varna','c1006','chandra@gmail.com');
+describe student_table;
+select * from student_table;
+select student_name,student_id,course_name from student_table;
+SET SQL_SAFE_UPDATES = 0;
+delete from student_table;
+select * from student_table;
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(1,'ram','c1002','vamsi@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(2,'gopal','c1003','chittoor@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(3,'Vamsi','c1002','vara@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(4,'Varna','c1006','chandra@gmail.com');
+select * from student_table;
+TRUNCATE TABLE student_table;
+select * from student_table;
+show tables;
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(1,'ram','c1002','vamsi@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(2,'gopal','c1003','chittoor@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(3,'Vamsi','c1002','vara@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(4,'Varna','c1006','chandra@gmail.com');
+INSERT INTO student_table(student_id,student_name,course_name,email)
+VALUES(5,'Vaa','c1006','chandras@gmail.com');
+select * from student_table;
+select * from student_table where course_name = "c1006";
+select * from student_table where course_name = "c1006" AND student_id = 4;
+select * from student_table where course_name = "c1006" OR student_id = 1;
+select * from student_table where  not course_name = "c1006" AND  not student_id = 4;
+select * from student_table where course_name in ("c1006","c1002") ;
+select * from student_table where course_name between "c1002" and "c1006";
+select * from student_table;
+select * from student_table where student_name like 'v%';
+select * from student_table where course_name like '%6';
+INSERT INTO student_table(student_id,student_name,course_name)
+VALUES(6,'Varun','c1007');
+INSERT INTO student_table(student_id,student_name,course_name)
+VALUES(7,'Varna','c1008');
+select * from student_table ;
+select * from student_table where email is null
+
